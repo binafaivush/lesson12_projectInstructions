@@ -7,15 +7,18 @@ import userRouter from "./routers/user.js";
 import borrowRouter from "./routers/borrow.js";
 import { logToFile } from "./middlewares/logToFile.js";
 const app = express();
-connectToDB();
+// connectToDB();
 dotenv.config();
 
 app.use(logToFile);
 app.use(express.json());
-
+app.get("/all",()=>{
+    console.log("hello to you")
+})
+/*
 app.use("/api/user", userRouter);
 app.use("/api/book", bookRouter);
-app.use("/api/borrow", borrowRouter);
+app.use("/api/borrow", borrowRouter);*/
 // app.use("/api/borrow")
 
 const port = process.env.PORT;
